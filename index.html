@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Destiny App</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="destiny-app">
+  <div v-for = "swData in cards">
+    <div class="card" v-bind:class="swData.color">
+       <!--img goes here-->
+       <div class="image"><img v-bind:src = "swData.img"></div>
+       <div class="health">{{swData.health}}</div>
+       <div class="rarity rare" v-bind:class="{rare:swData.rarity, legendary:!swData.rarity}">{{swData.setNumber}}</div>
+       <div class="name">{{swData.name}}</div>
+       <div class="affl" v-bind:class="swData.affl">{{swData.affl}}</div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
